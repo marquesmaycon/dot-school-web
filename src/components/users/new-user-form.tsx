@@ -6,7 +6,7 @@ export default function NewUserForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
 
-  const { mutateAsync: createUser, isPending, isSuccess, isError, variables } = useCreateUser()
+  const { mutateAsync: createUser, isPending, isSuccess, isError, error, variables } = useCreateUser()
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     await createUser(
@@ -36,7 +36,7 @@ export default function NewUserForm() {
         {isPending ? "Cadastrando..." : "Cadastrar"}
       </button>
       {isSuccess && !isPending && <p className="successMessage">Usuário {variables.email} cadastrado com sucesso!</p>}
-      {isError && <p className="errorMessage">Erro ao cadastrar usuário</p>}
+      {isError && <p className="errorMessage">Erro: {error.response?.data.errors[0].message || error.message}</p>}
     </form>
   )
 }

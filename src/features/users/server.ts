@@ -4,6 +4,8 @@ import { api } from "@/lib/api"
 import { queryClient } from "@/lib/tanstack-query"
 
 import type { User } from "./type"
+import type { AxiosError } from "axios"
+import type { VineError } from "@/types/vinejs"
 
 export const useUsers = () => {
   return useQuery({
@@ -26,8 +28,8 @@ export const useUserCourses = (userSearch?: string) => {
 }
 
 export const useCreateUser = () => {
-  return useMutation({
-    mutationFn: async (payload: { name: string; email: string }) => {
+  return useMutation<User, AxiosError<VineError>, { name: string; email: string }>({
+    mutationFn: async (payload) => {
       const res = await api.post<User>("/users", payload)
       return res.data
     },

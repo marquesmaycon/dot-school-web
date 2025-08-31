@@ -1,10 +1,14 @@
+import { useMutation } from "@tanstack/react-query"
+import type { AxiosError } from "axios"
+
 import { api } from "@/lib/api"
 import { queryClient } from "@/lib/tanstack-query"
-import { useMutation } from "@tanstack/react-query"
+
+import type { User } from "../users/type"
 
 export const useClassAssignUser = () => {
-  return useMutation({
-    mutationFn: async ({ classId, userEmail }: { classId: number; userEmail: string }) => {
+  return useMutation<User, AxiosError<{ message: string }>, { classId: number; userEmail: string }>({
+    mutationFn: async ({ classId, userEmail }) => {
       const res = await api.post(`/classes/${classId}/users`, { email: userEmail })
       return res.data
     },

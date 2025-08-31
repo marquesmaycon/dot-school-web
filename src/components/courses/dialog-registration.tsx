@@ -15,7 +15,7 @@ export const DialogRegistration = ({ open, classId, onClose }: DialogRegistratio
   const [email, setEmail] = useState("")
   const [selectedEmail, setSelectedEmail] = useState<string | null>(null)
 
-  const { mutateAsync: registerUser, isPending, isSuccess, isError, reset } = useClassAssignUser()
+  const { mutateAsync: registerUser, isPending, isSuccess, isError, error, reset } = useClassAssignUser()
 
   const handleClose = () => {
     setEmail("")
@@ -52,7 +52,7 @@ export const DialogRegistration = ({ open, classId, onClose }: DialogRegistratio
           <div className="dialogHeader">
             <h3>Realizar Matrícula</h3>
             <button type="button" className="dialog-close" onClick={handleClose}>
-              ×
+              X
             </button>
           </div>
 
@@ -77,7 +77,7 @@ export const DialogRegistration = ({ open, classId, onClose }: DialogRegistratio
 
           <div className="dialogActions">
             {isSuccess && <p className="successMessage">Usuário matriculado com sucesso!</p>}
-            {isError && <p className="errorMessage">Erro ao matricular usuário. Tente novamente.</p>}
+            {isError && <p className="errorMessage">Erro: {error.response?.data.message || error.message}</p>}
             <button type="button" className="buttonCancel" onClick={handleClose}>
               Cancelar
             </button>
