@@ -1,0 +1,48 @@
+.usersContainer h4 {
+  margin-bottom: 1rem;
+}
+.newUserForm {
+  background: #181a20;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.newUserForm label {
+  color: #e2e6ee;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.newUserForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #31343c;
+  background: #23272f;
+  color: #e2e6ee;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.newUserForm button {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid #31343c;
+  background: #181a20;
+  color: #90caf9;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.newUserForm button:hover {
+  background: #23272f;
+  color: #fff;
+}

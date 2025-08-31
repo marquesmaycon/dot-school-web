@@ -6,7 +6,7 @@ import "./header.css"
 const menuOptions = [
   { label: "Cursos Disponíveis", href: "/" },
   { label: "Matrículas", href: "/matriculas" },
-  { label: "Novo Usuários", href: "/novo-usuário" }
+  { label: "Novo Usuários", href: "/novo-usuario" }
 ]
 
 export default function Header() {
