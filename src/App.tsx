@@ -1,10 +1,11 @@
-import { useThemes } from "./features/themes/server"
+import { Outlet } from "react-router"
 
 function App() {
-  const { data: themes } = useThemes()
   return (
     <main>
-      <div className="main-container">{JSON.stringify(themes, null, 2)}</div>
+      <div className="main-container">
+        <Outlet />
+      </div>
     </main>
   )
 }
