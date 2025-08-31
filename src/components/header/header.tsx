@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 
 import "./header.css"
 
@@ -11,6 +11,7 @@ const menuOptions = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
 
   return (
     <header className="header">
@@ -22,7 +23,9 @@ export default function Header() {
           <ul>
             {menuOptions.map((option) => (
               <li key={option.label}>
-                <Link to={option.href}>{option.label}</Link>
+                <Link to={option.href} className={location.pathname === option.href ? "active" : ""}>
+                  {option.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -36,7 +39,9 @@ export default function Header() {
         <ul>
           {menuOptions.map((option) => (
             <li key={option.label}>
-              <Link to={option.href}>{option.label}</Link>
+              <Link to={option.href} className={location.pathname === option.href ? "active" : ""}>
+                {option.label}
+              </Link>
             </li>
           ))}
         </ul>

@@ -59,6 +59,19 @@ nav a:hover {
   text-decoration: none;
 }
 
+nav a.active,
+.mobileNav a.active {
+  background: #90caf9;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+nav a.active:hover,
+.mobileNav a.active:hover {
+  background: #64b5f6;
+  color: #1a1a1a;
+}
+
 nav.open {
   display: flex;
 }

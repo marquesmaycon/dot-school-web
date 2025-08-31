@@ -55,7 +55,7 @@ const Registrations = () => {
         </button>
       </form>
       <div className="usersContainer">
-        <h4>Usuários</h4>
+        <h4>Usuários Matriculados</h4>
         <table>
           <thead>
             <tr>
@@ -80,6 +80,13 @@ const Registrations = () => {
               <tr>
                 <td colSpan={4} className="loading">
                   Carregando...
+                </td>
+              </tr>
+            )}
+            {registeredUsers?.length === 0 && !isLoading && (
+              <tr>
+                <td colSpan={4} className="loading">
+                  Nenhuma matrícula encontrada.
                 </td>
               </tr>
             )}
