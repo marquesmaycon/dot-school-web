@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useAvailableCourses } from "@/features/courses/server"
 import { useThemes } from "@/features/themes/server"
 
-import "./available-courses.css"
+import "./courses.css"
 
 const AvailableCourses = () => {
   const { data: themes } = useThemes()
@@ -25,7 +25,7 @@ const AvailableCourses = () => {
 
   return (
     <div>
-      <h2>Cursos Disponíveis</h2>
+      <h2>Cursos</h2>
       <form
         className="coursesFilterBar"
         onSubmit={(e) => {

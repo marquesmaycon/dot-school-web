@@ -16,20 +16,11 @@
   font-weight: 600;
 }
 
-.registrationsFilterSelect,
-.registrationsFilterInput {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid #31343c;
-  background: #23272f;
-  color: #e2e6ee;
-}
-
 .registrationsFilterBtn {
   padding: 0.6em 1.2em;
   border-radius: 8px;
   border: 1px solid #31343c;
-  background: #181a20;
+  background: var(--bg-primary);
   color: #90caf9;
   font-weight: 600;
   cursor: pointer;

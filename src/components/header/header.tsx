@@ -4,9 +4,9 @@ import { Link } from "react-router"
 import "./header.css"
 
 const menuOptions = [
-  { label: "Cursos Disponíveis", href: "/" },
+  { label: "Cursos", href: "/" },
   { label: "Matrículas", href: "/matriculas" },
-  { label: "Novo Usuários", href: "/novo-usuario" }
+  { label: "Usuários", href: "/usuarios" }
 ]
 
 export default function Header() {

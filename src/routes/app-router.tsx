@@ -2,16 +2,16 @@ import { lazy } from "react"
 import { Route, Routes } from "react-router"
 
 const App = lazy(() => import("@/app"))
-const AvailableCourses = lazy(() => import("@/components/available-courses/available-courses"))
-const NewUser = lazy(() => import("@/components/new-user/new-user"))
+const Courses = lazy(() => import("@/components/courses/courses"))
+const Users = lazy(() => import("@/components/users/users"))
 const Registrations = lazy(() => import("@/components/registrations/registrations"))
 
 export default function AppRouter() {
   return (
     <Routes>
       <Route element={<App />}>
-        <Route path="/" element={<AvailableCourses />} />
-        <Route path="/novo-usuario" element={<NewUser />} />
+        <Route path="/" element={<Courses />} />
+        <Route path="/usuarios" element={<Users />} />
         <Route path="/matriculas" element={<Registrations />} />
       </Route>
     </Routes>

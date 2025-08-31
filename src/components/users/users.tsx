@@ -1,12 +1,13 @@
 import { useUsers } from "@/features/users/server"
 
-import "./new-user.css"
+import "./users.css"
 import NewUserForm from "./new-user-form"
 
 const NewUser = () => {
   const { data: users } = useUsers()
   return (
     <div>
+      <h2>Novo Usuário</h2>
       <NewUserForm />
       <div>
         <div className="usersContainer">
