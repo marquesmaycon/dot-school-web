@@ -3,15 +3,12 @@
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-block: 2rem;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .coursesFilterTitle {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .coursesFilterInput {
@@ -48,5 +45,66 @@
   color: #90caf9;
   font-weight: 600;
   cursor: pointer;
-  margin-left: auto;
+  width: 100%;
+}
+
+.courseContainer {
+  padding-block: 4rem;
+}
+
+.courseHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.courseHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e2e6ee;
+}
+
+.courseHeader div {
+  flex: 1;
+}
+
+.courseHeader div:nth-child(2) {
+  flex: 2;
+}
+
+.courseImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.courseImage {
+  height: 150px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.courseVacancies {
+  color: #cdd2e0;
+  white-space: nowrap;
+}
+
+.coursesFilterTitle label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .courseHeader {
+    flex-direction: row;
+  }
+
+  .coursesFilterBtn {
+    margin-left: auto;
+    width: auto;
+    align-self: flex-end;
+  }
 }

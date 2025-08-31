@@ -34,8 +34,10 @@ const AvailableCourses = () => {
         }}
       >
         <div className="coursesFilterTitle">
-          <label htmlFor="title">Título:</label>
-          <input id="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="coursesFilterInput" placeholder="Buscar por título..." />
+          <label className="course">
+            Título:
+            <input id="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="coursesFilterInput" placeholder="Buscar por título..." />
+          </label>
         </div>
         <fieldset style={{ border: "none", padding: 0 }}>
           <legend className="coursesFilterLegend">Temas:</legend>
@@ -52,26 +54,55 @@ const AvailableCourses = () => {
           Filtrar
         </button>
       </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Capa</th>
-            <th>Nome</th>
-            <th>Turmas</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses?.map((course) => (
-            <tr key={course.id}>
-              <td>
-                <img src={course.imgUrl} alt={course.title} className="course-image" />
-              </td>
-              <td>{course.title}</td>
-              <td>{course.classes?.map((classItem) => classItem.title).join(", ")}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+
+      <div>
+        {courses?.map((course) => (
+          <div className="courseContainer">
+            <div className="courseHeader">
+              <img src={course.imgUrl} alt={course.title} className="courseImage" />
+              <div>
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+              </div>
+              <div>
+                <h4>Temas</h4>
+                <p>{course.themes?.map((theme) => theme.title).join(", ")}</p>
+              </div>
+            </div>
+            <h4>Turmas</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome da Turma</th>
+                  <th>Descrição</th>
+                  <th>Vagas</th>
+                  <th>Início</th>
+                  <th>Fim</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {course.classes?.map(({ id, title, description, vacancies, startDate, endDate, meta }) => (
+                  <tr key={id}>
+                    <td>{title}</td>
+                    <td>{description}</td>
+                    <td>
+                      <span className="courseVacancies">
+                        {meta?.users_count} / {vacancies}
+                      </span>
+                    </td>
+                    <td>{new Date(startDate).toLocaleDateString()}</td>
+                    <td>{new Date(endDate).toLocaleDateString()}</td>
+                    <td>
+                      <button className="buttonSecondary">Matricular</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

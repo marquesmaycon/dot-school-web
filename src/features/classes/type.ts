@@ -15,6 +15,10 @@ export type Class = {
 
   course?: Course
   users?: User[]
+
+  meta?: {
+    users_count: number
+  }
 }
 
 export type ClassStatus = "AVAILABLE" | "FINISHED"
