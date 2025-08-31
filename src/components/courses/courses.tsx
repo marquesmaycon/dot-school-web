@@ -15,7 +15,7 @@ const AvailableCourses = () => {
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null)
 
   const { data: themes } = useThemes()
-  const { data: courses } = useAvailableCourses(filter)
+  const { data: courses, isLoading } = useAvailableCourses(filter)
 
   const handleThemeChange = (id: number) => {
     setSelectedThemes((prev) => (prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]))
@@ -126,6 +126,8 @@ const AvailableCourses = () => {
             </table>
           </div>
         ))}
+        {isLoading && <p>Carregando...</p>}
+        {courses?.length === 0 && !isLoading && <p>Nenhum curso encontrado.</p>}
       </div>
 
       <DialogRegistration

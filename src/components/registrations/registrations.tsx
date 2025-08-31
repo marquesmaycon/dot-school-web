@@ -69,25 +69,29 @@ const Registrations = () => {
             {registeredUsers?.map((user) =>
               user.classes?.map((classItem) => (
                 <tr key={`${user.id}-${classItem.id}`}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{classItem.title}</td>
-                  <td>{classItem.course?.title || "-"}</td>
+                  <td>
+                    <span>Nome: </span> {user.name}
+                  </td>
+                  <td>
+                    <span>E-mail: </span> {user.email}
+                  </td>
+                  <td>
+                    <span>Turma: </span> {classItem.title}
+                  </td>
+                  <td>
+                    <span>Curso: </span> {classItem.course?.title || "-"}
+                  </td>
                 </tr>
               ))
             )}
             {isLoading && (
               <tr>
-                <td colSpan={4} className="loading">
-                  Carregando...
-                </td>
+                <td colSpan={4}>Carregando...</td>
               </tr>
             )}
             {registeredUsers?.length === 0 && !isLoading && (
               <tr>
-                <td colSpan={4} className="loading">
-                  Nenhuma matrícula encontrada.
-                </td>
+                <td colSpan={4}>Nenhuma matrícula encontrada.</td>
               </tr>
             )}
           </tbody>

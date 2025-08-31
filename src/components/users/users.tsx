@@ -4,7 +4,7 @@ import "./users.css"
 import NewUserForm from "./new-user-form"
 
 const NewUser = () => {
-  const { data: users } = useUsers()
+  const { data: users, isLoading } = useUsers()
   return (
     <div>
       <h2>Novo Usuário</h2>
@@ -22,10 +22,24 @@ const NewUser = () => {
             <tbody>
               {users?.map(({ id, email, name }) => (
                 <tr key={id}>
-                  <td>{name}</td>
-                  <td>{email}</td>
+                  <td>
+                    <span>Nome: </span> {name}
+                  </td>
+                  <td>
+                    <span>E-mail: </span> {email}
+                  </td>
                 </tr>
               ))}
+              {isLoading && (
+                <tr>
+                  <td colSpan={4}>Carregando...</td>
+                </tr>
+              )}
+              {users?.length === 0 && !isLoading && (
+                <tr>
+                  <td colSpan={4}>Nenhum usuário encontrado.</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

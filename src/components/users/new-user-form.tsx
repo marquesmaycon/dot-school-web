@@ -32,7 +32,7 @@ export default function NewUserForm() {
           <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
       </div>
-      <button type="submit" disabled={isPending}>
+      <button type="submit" className="buttonPrimary" disabled={isPending}>
         {isPending ? "Cadastrando..." : "Cadastrar"}
       </button>
       {isSuccess && !isPending && <p className="successMessage">Usuário {variables.email} cadastrado com sucesso!</p>}
