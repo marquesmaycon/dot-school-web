@@ -4,15 +4,17 @@ import { useAvailableCourses } from "@/features/courses/server"
 import { useThemes } from "@/features/themes/server"
 
 import "./courses.css"
+import { DialogRegistration } from "./dialog-registration"
 
 const AvailableCourses = () => {
-  const { data: themes } = useThemes()
-
   const [filter, setFilter] = useState<{ title: string; themes: number[] }>({ title: "", themes: [] })
-
   const [title, setTitle] = useState("")
   const [selectedThemes, setSelectedThemes] = useState<number[]>([])
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [selectedClassId, setSelectedClassId] = useState<number | null>(null)
+
+  const { data: themes } = useThemes()
   const { data: courses } = useAvailableCourses(filter)
 
   const handleThemeChange = (id: number) => {
@@ -94,7 +96,15 @@ const AvailableCourses = () => {
                     <td>{new Date(startDate).toLocaleDateString()}</td>
                     <td>{new Date(endDate).toLocaleDateString()}</td>
                     <td>
-                      <button className="buttonSecondary">Matricular</button>
+                      <button
+                        className="buttonSecondary"
+                        onClick={() => {
+                          setSelectedClassId(id)
+                          setIsDialogOpen(true)
+                        }}
+                      >
+                        Matricular
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -103,6 +113,15 @@ const AvailableCourses = () => {
           </div>
         ))}
       </div>
+
+      <DialogRegistration
+        open={isDialogOpen}
+        classId={selectedClassId}
+        onClose={() => {
+          setIsDialogOpen(false)
+          setSelectedClassId(null)
+        }}
+      />
     </div>
   )
 }

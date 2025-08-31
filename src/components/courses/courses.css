@@ -105,3 +105,100 @@
     align-self: flex-end;
   }
 }
+
+.dialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: var(--bg-primary);
+  border: 1px solid #31343c;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #31343c;
+}
+
+.dialogHeader h3 {
+  margin: 0;
+  color: #e2e6ee;
+  font-size: 1.25rem;
+}
+
+.dialogClose {
+  background: none;
+  border: none;
+  color: #cdd2e0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialogClose:hover {
+  background: #31343c;
+}
+
+.dialogContent {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  color: #e2e6ee;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #31343c;
+  background: #23272f;
+  color: #e2e6ee;
+  font-size: 1rem;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #90caf9;
+}
+
+.dialogActions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #31343c;
+  justify-content: flex-end;
+}
+
