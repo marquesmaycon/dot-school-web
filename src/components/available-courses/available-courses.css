@@ -1,0 +1,52 @@
+.coursesFilterBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.coursesFilterTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.coursesFilterInput {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #31343c;
+  background: #23272f;
+  color: #e2e6ee;
+}
+
+.coursesFilterGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.coursesFilterCheckboxLabel {
+  color: #cdd2e0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.coursesFilterLegend {
+  color: #e2e6ee;
+  margin-bottom: 0.5rem;
+}
+
+.coursesFilterBtn {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid #31343c;
+  background: #181a20;
+  color: #90caf9;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: auto;
+}

@@ -2,7 +2,7 @@ import { lazy } from "react"
 import { Route, Routes } from "react-router"
 
 const App = lazy(() => import("@/app"))
-const AvailableCourses = lazy(() => import("@/components/available-courses"))
+const AvailableCourses = lazy(() => import("@/components/available-courses/available-courses"))
 
 export default function AppRouter() {
   return (

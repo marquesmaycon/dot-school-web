@@ -14,11 +14,11 @@ export const useCourses = () => {
   })
 }
 
-export const useAvailableCourses = () => {
+export const useAvailableCourses = (filters: { title: string; themes: number[] }) => {
   return useQuery({
-    queryKey: ["courses", "available"],
+    queryKey: ["courses", "available", filters],
     queryFn: async () => {
-      const res = await api.get<Course[]>("/courses/available")
+      const res = await api.get<Course[]>("/courses/available", { params: filters })
       return res.data
     }
   })
