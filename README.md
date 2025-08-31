@@ -8,12 +8,12 @@ Sistema de gestão de cursos e matrículas desenvolvido com React, TypeScript e 
 - [Screenshots](#screenshots)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Pré-requisitos](#pré-requisitos)
+- [Pré-requisitos](#pre-requisitos)
 - [Como Rodar o Projeto](#como-rodar-o-projeto)
 - [API e Backend](#api-e-backend)
-- [Scripts Disponíveis](#scripts-disponíveis)
+- [Scripts Disponíveis](#scripts-disponiveis)
 - [Funcionalidades Detalhadas](#funcionalidades-detalhadas)
-- [Observações Importantes](#observações-importantes)
+- [Observações Importantes](#observacoes-importantes)
 
 ## 🎯 Sobre o Projeto
 
