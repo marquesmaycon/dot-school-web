@@ -22,13 +22,15 @@ export default function NewUserForm() {
 
   return (
     <form className="newUserForm surface" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nome:</label>
-        <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      <div className="fields">
+        <div>
+          <label htmlFor="name">Nome:</label>
+          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
       </div>
       <button type="submit" disabled={isPending}>
         {isPending ? "Cadastrando..." : "Cadastrar"}

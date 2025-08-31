@@ -3,17 +3,17 @@
   gap: 1rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-}
 
-.registrationsFilterBar div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.registrationsFilterBar label {
-  color: #e2e6ee;
-  font-weight: 600;
+  & label {
+    color: #e2e6ee;
+    font-weight: 600;
+  }
 }
 
 .registrationsFilterBtn {
@@ -26,9 +26,9 @@
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   align-self: flex-end;
-}
 
-.registrationsFilterBtn:hover {
-  background: #23272f;
-  color: #fff;
+  &:hover {
+    background: #23272f;
+    color: #fff;
+  }
 }

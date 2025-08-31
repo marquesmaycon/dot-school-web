@@ -29,17 +29,27 @@ header {
 
 nav {
   position: relative;
-}
 
-nav ul {
-  gap: 1rem;
-  border-radius: 8px;
-  display: none;
-}
+  & ul {
+    gap: 1rem;
+    border-radius: 8px;
+    display: none;
+  }
 
-nav li {
-  display: flex;
-  align-items: center;
+  & li {
+    display: flex;
+    align-items: center;
+  }
+
+  &.open {
+    display: flex;
+  }
+
+  & a:hover {
+    background: #23272f;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 nav a,
@@ -51,12 +61,6 @@ nav a,
   transition: background 0.2s, color 0.2s;
   text-decoration: none;
   color: #3d81b8;
-}
-
-nav a:hover {
-  background: #23272f;
-  color: #fff;
-  text-decoration: none;
 }
 
 nav a.active,
@@ -72,25 +76,21 @@ nav a.active:hover,
   color: #1a1a1a;
 }
 
-nav.open {
-  display: flex;
-}
-
 .mobileNav {
   display: none;
   margin-top: 1rem;
-}
 
-.mobileNav.open {
-  display: flex;
-}
+  &.open {
+    display: flex;
+  }
 
-.mobileNav ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+  }
 }
 
 .menu-toggle {
@@ -104,22 +104,23 @@ nav.open {
   position: relative;
   display: block;
   outline: none;
-}
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 24px;
-  height: 2px;
-  background: #2d3748;
-  transition: 0.2s;
-}
-.hamburger::before {
-  top: -8px;
-}
-.hamburger::after {
-  top: 8px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #2d3748;
+    transition: 0.2s;
+  }
+  &::before {
+    top: -8px;
+  }
+  &::after {
+    top: 8px;
+  }
 }
 
 @media (min-width: 48rem) {
@@ -127,15 +128,17 @@ nav.open {
     font-size: 2.2rem;
   }
 
-  nav ul {
-    display: flex;
+  nav {
+    & ul {
+      display: flex;
+    }
+
+    & a {
+      font-size: 1.1rem;
+    }
   }
 
-  nav a {
-    font-size: 1.1rem;
-  }
-
-  header {
+  nav header {
     padding: 1rem 2rem;
   }
 
