@@ -25,7 +25,7 @@ const Registrations = () => {
       <form className="registrationsFilterBar surface" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="user-select">Usuário:</label>
-          <select id="user-select" value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)} className="registrationsFilterSelect">
+          <select id="user-select" value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
             <option value="">Todos</option>
             {isLoadingUsers && (
               <option value="" disabled>

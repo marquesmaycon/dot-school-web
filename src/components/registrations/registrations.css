@@ -1,8 +1,8 @@
 .registrationsFilterBar {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
 
   & div {
     display: flex;
@@ -26,9 +26,25 @@
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   align-self: flex-end;
+  margin-left: auto;
 
   &:hover {
     background: #23272f;
     color: #fff;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .registrationsFilterBar {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .registrationsFilterInput {
+    flex: 1;
+  }
+
+  .registrationsFilterSelect {
+    flex: 1;
   }
 }
