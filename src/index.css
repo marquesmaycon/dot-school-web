@@ -48,9 +48,8 @@ body {
   margin: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+ul {
+  list-style-type: none;
 }
 
 button {
@@ -66,10 +65,6 @@ button {
 }
 button:hover {
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 /* Estilização geral da tabela para tema escuro */
@@ -123,8 +118,7 @@ tfoot td {
   border-top: 2px solid #31343c;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 48rem) {
   table,
   thead,
   tbody,
@@ -148,21 +142,8 @@ tfoot td {
   }
 }
 
-/* Estilo para o nome do app (h1) */
-h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #90caf9;
-  letter-spacing: 2px;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-/* Estilo para o título da página atual (h2) */
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #e2e6ee;
   margin-top: 1.5rem;
@@ -196,4 +177,11 @@ h2 {
   color: #9ca3af;
   cursor: not-allowed;
   border-color: #e5e7eb;
+}
+
+
+@media screen and (min-width: 48rem) {
+  h2 {
+    font-size: 2rem;
+  }
 }
