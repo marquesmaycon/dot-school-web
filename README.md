@@ -2,19 +2,6 @@
 
 Sistema de gestão de cursos e matrículas desenvolvido com React, TypeScript e Vite. Uma aplicação web moderna para gerenciar cursos, usuários e matrículas de forma intuitiva e eficiente.
 
-## 📋 Índice
-
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Screenshots](#screenshots)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Pré-requisitos](#pre-requisitos)
-- [Como Rodar o Projeto](#como-rodar-o-projeto)
-- [API e Backend](#api-e-backend)
-- [Scripts Disponíveis](#scripts-disponiveis)
-- [Funcionalidades Detalhadas](#funcionalidades-detalhadas)
-- [Observações Importantes](#observacoes-importantes)
-
 ## 🎯 Sobre o Projeto
 
 O Dot School Web é uma plataforma de gestão educacional que permite:
@@ -99,15 +86,25 @@ Antes de executar o projeto, certifique-se de ter instalado:
 npm install
 ```
 
-### 4. Execute o projeto em modo de desenvolvimento
+### 3. Execute o backend da aplicação
+
+### Executando a aplicação
+
+#### Modo desenvolvimento:
+
 ```bash
 npm run dev
 ```
 
-### 5. Execute o backend da aplicação
+#### Modo produção:
+
+```bash
+npm run build
+npm run preview
+```
 
 ### 6. Acesse a aplicação
-A aplicação estará disponível em: `http://localhost:5173`
+A aplicação estará disponível em: `http://localhost:5173` (desenvolvimento) ou `http://localhost:5174` (produção)
 
 ## 🔌 API e Backend
 
