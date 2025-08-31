@@ -4,7 +4,6 @@ import { api } from "@/lib/api"
 import { queryClient } from "@/lib/tanstack-query"
 
 import type { User } from "./type"
-import type { Course } from "../courses/type"
 
 export const useUsers = () => {
   return useQuery({
@@ -16,11 +15,11 @@ export const useUsers = () => {
   })
 }
 
-export const useUserCourses = (userId: string) => {
+export const useUserCourses = (userSearch?: string) => {
   return useQuery({
-    queryKey: ["users", userId, "courses"],
+    queryKey: ["users", userSearch, "courses"],
     queryFn: async () => {
-      const res = await api.get<Course[]>(`/users/${userId}/courses`)
+      const res = await api.get<User[]>(`/users/courses`, { params: { search: userSearch } })
       return res.data
     }
   })
