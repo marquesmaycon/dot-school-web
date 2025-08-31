@@ -15,7 +15,7 @@ Sistema de gestão de cursos e matrículas desenvolvido com React, TypeScript e 
 - [Funcionalidades Detalhadas](#funcionalidades-detalhadas)
 - [Observações Importantes](#observações-importantes)
 
-## 🎯 Sobre o Projeto {#sobre-o-projeto}
+## 🎯 Sobre o Projeto
 
 O Dot School Web é uma plataforma de gestão educacional que permite:
 - Visualizar e filtrar cursos disponíveis
@@ -24,7 +24,7 @@ O Dot School Web é uma plataforma de gestão educacional que permite:
 - Acompanhar vagas disponíveis
 - Filtrar cursos por título e temas
 
-## 📸 Screenshots {#screenshots}
+## 📸 Screenshots
 
 Veja como a aplicação funciona através das capturas de tela abaixo:
 
@@ -48,7 +48,7 @@ Veja como a aplicação funciona através das capturas de tela abaixo:
 ![Interface Responsiva](./public/screenshot%206.png)
 *Demonstração da responsividade do projeto, com tabelas adaptadas para telas menores*
 
-## ✨ Funcionalidades {#funcionalidades}
+## ✨ Funcionalidades
 
 ### 📚 Gestão de Cursos
 - **Listagem de cursos**: Visualização de todos os cursos disponíveis
@@ -66,7 +66,7 @@ Veja como a aplicação funciona através das capturas de tela abaixo:
 - **Controle de vagas**: Visualização de vagas ocupadas vs. disponíveis
 - **Histórico de matrículas**: Acompanhamento das inscrições
 
-## 🛠 Tecnologias Utilizadas {#tecnologias-utilizadas}
+## 🛠 Tecnologias Utilizadas
 
 ### Frontend
 - **React 19.1.1** - Biblioteca para construção da interface
@@ -82,7 +82,7 @@ Veja como a aplicação funciona através das capturas de tela abaixo:
 - **ESLint** - Linter para manter qualidade do código
 - **TanStack Query DevTools** - Ferramentas de desenvolvimento para debugging
 
-## 📋 Pré-requisitos {#pré-requisitos}
+## 📋 Pré-requisitos
 
 Antes de executar o projeto, certifique-se de ter instalado:
 
@@ -90,7 +90,7 @@ Antes de executar o projeto, certifique-se de ter instalado:
 - **npm** ou **yarn**
 - **Git** para clonagem do repositório
 
-## 🚀 Como Rodar o Projeto {#como-rodar-o-projeto}
+## 🚀 Como Rodar o Projeto
 
 ### 1. Descompacte o arquivo Zip
 
@@ -109,7 +109,7 @@ npm run dev
 ### 6. Acesse a aplicação
 A aplicação estará disponível em: `http://localhost:5173`
 
-## 🔌 API e Backend {#api-e-backend}
+## 🔌 API e Backend
 
 A aplicação consome uma API REST que deve estar rodando em `http://localhost:3333/api` (configurável via variável de ambiente `VITE_API_URL`).
 
@@ -120,14 +120,14 @@ A aplicação consome uma API REST que deve estar rodando em `http://localhost:3
 - `POST /users` - Cria novo usuário
 - `POST /class/:classId:user` - Cria nova matrícula para usuário
 
-## 📜 Scripts Disponíveis {#scripts-disponíveis}
+## 📜 Scripts Disponíveis
 
 - `npm run dev` - Inicia o servidor de desenvolvimento
 - `npm run build` - Gera build de produção
 - `npm run preview` - Preview do build de produção
 - `npm run lint` - Executa o linter para verificar qualidade do código
 
-## 🔍 Funcionalidades Detalhadas {#funcionalidades-detalhadas}
+## 🔍 Funcionalidades Detalhadas
 
 ### Página de Cursos (`/`)
 - **Filtros**: Por título e temas específicos
@@ -143,7 +143,7 @@ A aplicação consome uma API REST que deve estar rodando em `http://localhost:3
 - **Histórico**: Visualização das matrículas realizadas
 - **Status**: Acompanhamento do status das inscrições
 
-## ⚠ Observações Importantes {#observações-importantes}
+## ⚠ Observações Importantes
 
 ### Dependências de Backend
 - Este é apenas o frontend da aplicação
