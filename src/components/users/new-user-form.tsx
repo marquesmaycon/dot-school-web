@@ -21,7 +21,7 @@ export default function NewUserForm() {
   }
 
   return (
-    <form className="newUserForm" onSubmit={handleSubmit}>
+    <form className="newUserForm surface" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Nome:</label>
         <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required />

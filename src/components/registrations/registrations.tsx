@@ -22,7 +22,7 @@ const Registrations = () => {
   return (
     <div>
       <h2>Matrículas</h2>
-      <form className="registrationsFilterBar" onSubmit={handleSubmit}>
+      <form className="registrationsFilterBar surface" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="user-select">Usuário:</label>
           <select id="user-select" value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)} className="registrationsFilterSelect">

@@ -29,7 +29,7 @@ const AvailableCourses = () => {
     <div>
       <h2>Cursos</h2>
       <form
-        className="coursesFilterBar"
+        className="coursesFilterBar surface"
         onSubmit={(e) => {
           e.preventDefault()
           handleFilter()
