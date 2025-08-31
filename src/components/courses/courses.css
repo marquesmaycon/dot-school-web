@@ -48,6 +48,13 @@
 .courseContainer {
   padding-block: 4rem;
   border-bottom: 1px solid #31343c;
+
+  h4 {
+    color: #e2e6ee;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .courseHeader {
@@ -89,10 +96,17 @@
   white-space: nowrap;
 }
 
-.coursesFilterTitle label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.coursesFilterTitle {
+  flex: 1 260px;
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+  }
 }
 
 .dialogOverlay {

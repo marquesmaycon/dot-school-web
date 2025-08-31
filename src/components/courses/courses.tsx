@@ -36,10 +36,10 @@ const AvailableCourses = () => {
         }}
       >
         <div className="coursesFilterTitle">
-          <label className="course">
+          <label htmlFor="title" className="">
             Título:
-            <input id="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="coursesFilterInput" placeholder="Buscar por título..." />
           </label>
+          <input id="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="coursesFilterInput" placeholder="Buscar por título..." />
         </div>
         <fieldset style={{ border: "none", padding: 0 }}>
           <legend className="coursesFilterLegend">Temas:</legend>
@@ -86,16 +86,30 @@ const AvailableCourses = () => {
               <tbody>
                 {course.classes?.map(({ id, title, description, vacancies, startDate, endDate, meta }) => (
                   <tr key={id}>
-                    <td>{title}</td>
-                    <td>{description}</td>
                     <td>
+                      <span>Nome da Turma: </span>
+                      {title}
+                    </td>
+                    <td>
+                      <span>Descrição: </span>
+                      {description}
+                    </td>
+                    <td>
+                      <span>Vagas: </span>
                       <span className="courseVacancies">
                         {meta?.users_count} / {vacancies}
                       </span>
                     </td>
-                    <td>{new Date(startDate).toLocaleDateString()}</td>
-                    <td>{new Date(endDate).toLocaleDateString()}</td>
                     <td>
+                      <span>Início: </span>
+                      {new Date(startDate).toLocaleDateString()}
+                    </td>
+                    <td>
+                      <span>Fim: </span>
+                      {new Date(endDate).toLocaleDateString()}
+                    </td>
+                    <td>
+                      <span>Ações: </span>
                       <button
                         className="buttonSecondary"
                         onClick={() => {
