@@ -24,6 +24,22 @@ export const DialogRegistration = ({ open, classId, onClose }: DialogRegistratio
     onClose()
   }
 
+  const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setEmail(value)
+    if (selectedEmail) {
+      setSelectedEmail(null)
+    }
+  }
+
+  const onSelectedEmailChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value
+    setSelectedEmail(value)
+    if (email) {
+      setEmail("")
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -59,12 +75,12 @@ export const DialogRegistration = ({ open, classId, onClose }: DialogRegistratio
           <div className="dialogContent">
             <div className="formGroup">
               <label htmlFor="registration-email">Email:</label>
-              <input id="registration-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite o email do usuário" />
+              <input id="registration-email" type="email" value={email} onChange={onEmailChange} placeholder="Digite o email do usuário" />
             </div>
 
             <div className="formGroup">
               <label htmlFor="registration-user">Ou selecione um usuário existente:</label>
-              <select id="registration-user" value={selectedEmail || ""} onChange={(e) => setSelectedEmail(e.target.value)}>
+              <select id="registration-user" value={selectedEmail || ""} onChange={onSelectedEmailChange}>
                 <option value="">Selecione um usuário</option>
                 {users?.map((user) => (
                   <option key={user.id} value={user.email}>

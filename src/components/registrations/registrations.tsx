@@ -19,13 +19,25 @@ const Registrations = () => {
     if (selectedUser) setSearch("")
   }
 
+  const onSelectedUserChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value
+    setSelectedUser(value)
+    if (search) setSearch("")
+  }
+
+  const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setSearch(value)
+    if (selectedUser) setSelectedUser("")
+  }
+
   return (
     <div>
       <h2>Matrículas</h2>
       <form className="registrationsFilterBar surface" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="user-select">Usuário:</label>
-          <select id="user-select" value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
+          <select id="user-select" value={selectedUser} onChange={onSelectedUserChange}>
             <option value="">Todos</option>
             {isLoadingUsers && (
               <option value="" disabled>
@@ -41,14 +53,7 @@ const Registrations = () => {
         </div>
         <div>
           <label htmlFor="search">Buscar:</label>
-          <input
-            id="search"
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar por nome ou email..."
-            className="registrationsFilterInput"
-          />
+          <input id="search" type="text" value={search} onChange={onSearchChange} placeholder="Buscar por nome ou email..." className="registrationsFilterInput" />
         </div>
         <button type="submit" className="registrationsFilterBtn">
           Buscar
